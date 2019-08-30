@@ -8,11 +8,10 @@ public class EnemyScript : MonoBehaviour
 
     public float xMin, xMax, Tilt;
 
-    public GameObject shot;
-
-    public GameObject playerExplosion;
+    public GameObject shot, playerExplosion;
 
     public Transform gunPosition;
+
     private GameObject player; 
 
     public float shotDelay, speedX;
@@ -68,10 +67,12 @@ public class EnemyScript : MonoBehaviour
                     .increaseEnemy(1);
                 return;
             }
+
             GameObject
                     .FindGameObjectWithTag("GameController")
                     .GetComponent<GameController>()
                     .increaseEnemy(1);
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

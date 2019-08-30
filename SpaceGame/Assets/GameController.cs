@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject scoreText, scoreTextEnemy, startButton, menu;
+
     private int score = 0;
     private int scoreEnemy = 0;
 

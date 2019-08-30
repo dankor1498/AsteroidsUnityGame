@@ -9,5 +9,4 @@ public class ClearExplosion : MonoBehaviour
     {
         Destroy(gameObject, 10);
     }
-
 }

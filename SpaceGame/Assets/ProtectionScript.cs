@@ -11,10 +11,4 @@ public class ProtectionScript : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = Vector3.back * Speed;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

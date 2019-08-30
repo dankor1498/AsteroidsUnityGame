@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class PlayerScript : MonoBehaviour
 
     public float xMin, xMax, zMin, zMax, Tilt;
 
-    public GameObject shot, shotL, shotR, playerExplosion;
+    public GameObject shot, shotL, shotR, playerExplosion, Shield;
 
     public Transform gunPosition, gunPositionL, gunPositionR;
 
@@ -18,17 +17,15 @@ public class PlayerScript : MonoBehaviour
     private float nextShot, nextShot4;
 
     private bool ifFire = false;
-    float timeFire;
+    private float timeFire;
 
-    public GameObject Shield;
     static internal bool ifProtection = false;
-    float timeProtection;
+    private float timeProtection;
 
     private GameController controller;
 
     void Start()
     {
-        //GameObject.FindGameObjectWithTag("Finish").SetActive(false);
         GameObject.Find("Shield").SetActive(false);
 
         controller = GameObject
@@ -72,7 +69,6 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-
         if (Time.time - timeProtection > 8 && ifProtection == true)
         {
             Shield.SetActive(false);
@@ -97,7 +93,6 @@ public class PlayerScript : MonoBehaviour
         float newY = Player.position.y;
 
         Player.position = new Vector3(newX, newY, newZ);
-
         Player.rotation = Quaternion.Euler(Player.velocity.z * Tilt, 0, -Player.velocity.x * Tilt);
     }
 
@@ -131,10 +126,5 @@ public class PlayerScript : MonoBehaviour
             timeProtection = Time.time;
             Shield.SetActive(true);
         }
-    }
-
-    private void OnDestroy()
-    {
-        //SceneManager.LoadScene(0);//SceneManager.GetActiveScene().buildIndex
     }
 }

@@ -9,6 +9,7 @@ public class AsteroidEmiterScript : MonoBehaviour
     public GameObject Fire, Protection;
     public GameObject Asteroid, AsteroidS, AsteroidXXL;
     public GameObject Enemy0, Enemy1, Enemy2;
+
     enum asteroids { asteroid, asteroidS, asteroidXXL };
     enum Enemies { enemy0, enemy1, enemy2 };
 
